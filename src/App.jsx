@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
+import Menu from "./components/menu/Menu";
 import Intro from "./components/intro/Intro";
 import Portfolio from "./components/portfolio/Portfolio";
 import Projects from "./components/projects/Projects";
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="app">
       <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <div className="sections">
         <Intro />
         <Portfolio />
