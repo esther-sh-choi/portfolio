@@ -3,12 +3,12 @@
 .navbar {
   width: 100%;
   height: 70px;
-  background-color: $mainColor;
-  color: white;
+  background-color: #454f89;
+  color: $lightMainColor;
   transition: all 0.5s ease;
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 
   .wrapper {
     padding: 10px 30px;
@@ -23,9 +23,10 @@
 
       .name-logo {
         display: flex;
-        font-size: 40px;
+        font-size: 25px;
         font-weight: 600;
         text-decoration: none;
+        margin-top: 5px;
         margin-right: 20px;
 
         .logo--first {
@@ -33,8 +34,8 @@
         }
 
         .logo--last {
-          color: #b7b8ff;
-          font-size: 45px;
+          color: #fac3ff;
+          font-size: 35px;
         }
       }
 
@@ -67,7 +68,7 @@
   }
 
   &.active {
-    background-color: #f5f5ff;
+    background-color: $lightMainColor;
     color: $mainColor;
     transition: all 0.5s ease;
     .left {

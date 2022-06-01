@@ -22,7 +22,7 @@ export default function Navbar({ openMenu, setOpenMenu }) {
             <p className="logo--last">choi</p>
           </a>
           <div className="item-container">
-            <FontAwesomeIcon icon={faPhone} className="icon phone-icon" />
+          <a href=”tel:+1-877-538-5888″><FontAwesomeIcon icon={faPhone} className="icon phone-icon" /></a>
             <span>+1-416-729-5604</span>
           </div>
           <div className="item-container">
