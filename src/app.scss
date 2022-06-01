@@ -7,6 +7,7 @@
     position: relative;
     top: 70px;
     overflow: auto;
+    scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; // firebox
     &::-webkit-scrollbar {
