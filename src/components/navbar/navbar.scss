@@ -5,6 +5,7 @@
   height: 70px;
   background-color: $mainColor;
   color: white;
+  transition: all 0.5s ease;
   position: fixed;
   top: 0;
   z-index: 2;
@@ -39,14 +40,14 @@
 
       .item-container {
         display: flex;
-        color: white;
         align-items: center;
         padding-left: 20px;
 
         .icon {
           font-size: 18px;
-          color: white;
           padding-right: 5px;
+          color: white;
+          transition: all 0.5s ease;
         }
 
         span {
@@ -57,10 +58,34 @@
     }
 
     .right {
-      .bars-icon {
-        color: white;
+      .menu-icon {
         font-size: 30px;
         cursor: pointer;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  &.active {
+    background-color: #f5f5ff;
+    color: $mainColor;
+    transition: all 0.5s ease;
+    .left {
+      .name-logo {
+        .logo--first {
+          color: #000001;
+          transition: all 0.5s ease;
+        }
+        .logo--last {
+          color: #7981da;
+          transition: all 0.5s ease;
+        }
+      }
+      .item-container {
+        .icon {
+          color: #000001;
+          transition: all 0.5s ease;
+        }
       }
     }
   }

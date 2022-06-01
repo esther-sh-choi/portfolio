@@ -5,11 +5,16 @@ import "../../global.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faPhone, faEnvelope, faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faBars,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
-export default function Navbar() {
+export default function Navbar({ openMenu, setOpenMenu }) {
   return (
-    <div className="navbar">
+    <div className={`navbar ${openMenu && "active"}`}>
       <div className="wrapper">
         <div className="left">
           <a href="#intro" className="name-logo">
@@ -25,7 +30,7 @@ export default function Navbar() {
             <span>estherchoi.sh@gmail.com</span>
           </div>
           <div className="item-container">
-            <a href="http://www.linkedin.com/in/esther--choi">
+            <a href="http://www.linkedin.com/in/esther--choi" target="_blank">
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="icon linkedin-icon"
@@ -35,7 +40,11 @@ export default function Navbar() {
           </div>
         </div>
         <div className="right">
-          <FontAwesomeIcon icon={faBars} className="icon bars-icon" />
+          <FontAwesomeIcon
+            icon={openMenu ? faXmark : faBars}
+            className="icon menu-icon"
+            onClick={() => setOpenMenu(!openMenu)}
+          />
         </div>
       </div>
     </div>
