@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
@@ -8,12 +8,13 @@ import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 
 import "./app.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function App() {
+  const [openMenu, setOpenMenu] = useState(false);
+
   return (
     <div className="app">
-      <Navbar />
+      <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <div className="sections">
         <Intro />
         <Portfolio />
