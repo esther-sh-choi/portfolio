@@ -5,16 +5,16 @@ function Menu({ openMenu, setOpenMenu }) {
   return (
     <div className={`menu ${openMenu && "active"}`}>
       <ul>
-        <li>
+        <li onClick={() => setOpenMenu(false)}>
           <a href="#intro">HOME</a>
         </li>
-        <li>
+        <li onClick={() => setOpenMenu(false)}>
           <a href="#portfolio">PORTFOLIO</a>
         </li>
-        <li>
+        <li onClick={() => setOpenMenu(false)}>
           <a href="#projects">PROJECTS</a>
         </li>
-        <li>
+        <li onClick={() => setOpenMenu(false)}>
           <a href="#contact">CONTACT ME</a>
         </li>
       </ul>
