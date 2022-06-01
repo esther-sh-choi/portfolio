@@ -18,10 +18,10 @@ function App() {
       <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <div className="sections">
-        <Intro />
-        <Portfolio />
-        <Projects />
-        <Contact />
+        <Intro setOpenMenu={setOpenMenu} />
+        <Portfolio setOpenMenu={setOpenMenu} />
+        <Projects setOpenMenu={setOpenMenu} />
+        <Contact setOpenMenu={setOpenMenu} />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
 .navbar {
   width: 100%;
   height: 70px;
-  background-color: #454f89;
+  background-color: #2a315b;
   color: $lightMainColor;
   transition: all 0.5s ease;
   position: fixed;
@@ -23,7 +23,7 @@
 
       .name-logo {
         display: flex;
-        font-size: 25px;
+        font-size: 30px;
         font-weight: 600;
         text-decoration: none;
         margin-top: 5px;
@@ -34,7 +34,7 @@
         }
 
         .logo--last {
-          color: #fac3ff;
+          color: #d090d6;
           font-size: 35px;
         }
       }
@@ -44,16 +44,21 @@
         align-items: center;
         padding-left: 20px;
 
-        .icon {
-          font-size: 18px;
-          padding-right: 5px;
-          color: white;
-          transition: all 0.5s ease;
-        }
+        a {
+          text-decoration: none;
+          color: $lightMainColor;
 
-        span {
-          font-size: 15px;
-          font-weight: 400;
+          .icon {
+            font-size: 18px;
+            padding-right: 5px;
+            color: white;
+            transition: all 0.5s ease;
+          }
+
+          span {
+            font-size: 15px;
+            font-weight: 400;
+          }
         }
       }
     }
@@ -83,9 +88,13 @@
         }
       }
       .item-container {
-        .icon {
-          color: #000001;
-          transition: all 0.5s ease;
+        a {
+          text-decoration: none;
+          color: $mainColor;
+          .icon {
+            color: #000001;
+            transition: all 0.5s ease;
+          }
         }
       }
     }
