@@ -44,6 +44,7 @@
       justify-content: flex-end;
       h3 {
         font-family: "JetBrains Mono", monospace;
+        font-size: 25px;
         color: white;
       }
     }
@@ -52,6 +53,73 @@
     flex: 0.2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .intro {
+    .top {
+      width: 80%;
+      margin-top: 60px;
+      .intro-name {
+        h1 {
+          font-size: 25px;
+        }
+        h1.name {
+          font-size: 50px;
+        }
+      }
+
+      .intro-sentence {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .intro {
+    background-position: 30%;
+    .top {
+      .intro-name {
+        h1 {
+          font-size: 20px;
+        }
+        h1.name {
+          font-size: 40px;
+        }
+      }
+
+      .intro-sentence {
+        h3 {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .intro {
+    .top {
+      .intro-name {
+        h1 {
+          font-size: 15px;
+        }
+        h1.name {
+          font-size: 35px;
+          padding: 0;
+        }
+      }
+
+      .intro-sentence {
+        h3 {
+          font-size: 17px;
+        }
+      }
+    }
   }
 }
