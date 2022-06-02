@@ -25,14 +25,12 @@ export default function Navbar({ openMenu, setOpenMenu }) {
           <div className="item-container">
             <a href="tel:+1-416-729-5604">
               <FontAwesomeIcon icon={faPhone} className="icon phone-icon" />
-              <span>+1-416-729-5604</span>
             </a>
           </div>
 
           <div className="item-container">
             <a href="mailto: estherchoi.sh@gmail.com">
               <FontAwesomeIcon icon={faEnvelope} className="icon email-icon" />
-              <span>estherchoi.sh@gmail.com</span>
             </a>
           </div>
 
@@ -43,7 +41,6 @@ export default function Navbar({ openMenu, setOpenMenu }) {
                 icon={faLinkedin}
                 className="icon linkedin-icon"
               />
-              <span>/esther--choi</span>
             </a>
           </div>
         </div>
