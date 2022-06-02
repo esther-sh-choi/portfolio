@@ -3,7 +3,7 @@
 .navbar {
   width: 100%;
   height: 70px;
-  background-color: #2a315b;
+  background-color: none;
   color: $lightMainColor;
   position: fixed;
   top: 0;
@@ -33,7 +33,7 @@
         }
 
         .logo--last {
-          color: #d090d6;
+          color: #9fafff;
           font-size: 35px;
         }
       }
@@ -67,31 +67,31 @@
   }
 
   &.active {
-    background-color: $lightMainColor;
+    //   background-color: $lightMainColor;
     color: $mainColor;
-    transition: all 0.5s ease;
-    .left {
-      .name-logo {
-        .logo--first {
-          color: #000001;
-          transition: all 0.5s ease;
-        }
-        .logo--last {
-          color: #7981da;
-          transition: all 0.5s ease;
-        }
-      }
-      .item-container {
-        a {
-          text-decoration: none;
-          color: $mainColor;
-          .icon {
-            color: #000001;
-            transition: all 0.5s ease;
-          }
-        }
-      }
-    }
+    transition: all 0.2s ease;
+    //   .left {
+    //     .name-logo {
+    //       .logo--first {
+    //         color: #000001;
+    //         transition: all 0.5s ease;
+    //       }
+    //       .logo--last {
+    //         color: #7981da;
+    //         transition: all 0.5s ease;
+    //       }
+    //     }
+    //     .item-container {
+    //       a {
+    //         text-decoration: none;
+    //         color: $mainColor;
+    //         .icon {
+    //           color: #000001;
+    //           transition: all 0.5s ease;
+    //         }
+    //       }
+    //     }
+    //   }
   }
 }
 @media screen and (max-width: 440px) {

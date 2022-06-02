@@ -1,5 +1,5 @@
 import React from "react";
-import "./portfolio.scss";
+import "./skills.scss";
 
 export default function Portfolio({ setOpenMenu }) {
   return (
