@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/menu/Menu";
+import SwipeScroll from "./components/UI/SwipeScroll";
 import Intro from "./components/intro/Intro";
 import Portfolio from "./components/portfolio/Portfolio";
 import Projects from "./components/projects/Projects";
