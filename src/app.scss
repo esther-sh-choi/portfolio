@@ -21,3 +21,11 @@
     }
   }
 }
+
+@media screen and (max-width: 440px) {
+  .app {
+    .sections {
+      top: 50px;
+    }
+  }
+}

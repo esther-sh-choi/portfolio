@@ -18,6 +18,7 @@ function App() {
     <div className="app">
       <Navbar openMenu={openMenu} setOpenMenu={setOpenMenu} />
       <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+      <SwipeScroll />
       <div className="sections">
         <Intro setOpenMenu={setOpenMenu} />
         <Portfolio setOpenMenu={setOpenMenu} />

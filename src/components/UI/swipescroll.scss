@@ -1,0 +1,32 @@
+.swipe-scroll {
+  height: 40px;
+  width: 100%;
+  background: none;
+  position: fixed;
+  z-index: 2;
+  top: 93%;
+  transition: all 0.5s ease;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    color: transparent;
+    font-size: 12px;
+
+    &:hover {
+      color: white;
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .swipe-scroll {
+    .wrapper {
+      font-size: 15px;
+    }
+  }
+}
