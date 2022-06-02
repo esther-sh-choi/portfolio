@@ -2,8 +2,9 @@ import React from "react";
 import "./intro.scss";
 
 import Button from "../UI/Button";
+import TypeIt from "typeit-react";
 
-export default function intro({ setOpenMenu }) {
+function Intro({ setOpenMenu }) {
   return (
     <div className="intro" id="intro" onClick={() => setOpenMenu(false)}>
       <div className="top">
@@ -12,7 +13,25 @@ export default function intro({ setOpenMenu }) {
           <h1 className="name">Esther.</h1>
         </div>
         <div className="intro-sentence">
-          <h3>I am a web developer.</h3>
+          <h3>
+            I am a{" "}
+            <TypeIt
+              options={{ loop: true }}
+              getBeforeInit={(instance) => {
+                instance
+                  .type("googling cham")
+                  .pause(700)
+                  .delete(13)
+                  .pause(500)
+                  .type("web developer")
+                  .pause(2500);
+
+                return instance;
+              }}
+              className="role"
+            />
+            .
+          </h3>
         </div>
       </div>
       <div className="bottom">
@@ -21,3 +40,5 @@ export default function intro({ setOpenMenu }) {
     </div>
   );
 }
+
+export default Intro;

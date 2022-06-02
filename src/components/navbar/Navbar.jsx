@@ -36,7 +36,11 @@ export default function Navbar({ openMenu, setOpenMenu }) {
 
           <div className="item-container">
             {" "}
-            <a href="http://www.linkedin.com/in/esther--choi" target="_blank">
+            <a
+              href="http://www.linkedin.com/in/esther--choi"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faLinkedin}
                 className="icon linkedin-icon"
