@@ -7,6 +7,7 @@ import {
   faCss3,
   faReact,
   faJsSquare,
+  faSass,
   faBootstrap,
   faNodeJs,
   faFigma,
@@ -26,8 +27,27 @@ export default function Portfolio({ setOpenMenu }) {
       </ul>
       <div className="container">
         <div className="item">
-          <img src="" alt="" />
-          <h3>HTML5 / CSS3</h3>
+          <FontAwesomeIcon icon={faHtml5} className="icon html-icon" />
+          <h3>HTML5</h3>
+        </div>
+        <div className="item">
+          <FontAwesomeIcon icon={faCss3} className="icon css-icon" />
+          <h3>CSS3</h3>
+          <h5>Flexbox, Grid</h5>
+          <h5>Animation</h5>
+          <h5>Module</h5>
+        </div>
+        <div className="item">
+          <FontAwesomeIcon icon={faSass} className="icon css-icon" />
+          <h3>Sass</h3>
+        </div>
+        <div className="item">
+          <FontAwesomeIcon icon={faJsSquare} className="icon js-icon" />
+          <h3>JavaScript ES6</h3>
+        </div>
+        <div className="item">
+          <FontAwesomeIcon icon={faReact} className="icon react-icon" />
+          <h3>React.js</h3>
         </div>
       </div>
     </div>
