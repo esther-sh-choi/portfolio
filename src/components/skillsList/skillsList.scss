@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+li {
+  font-size: 20px;
+  margin: 0 50px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &.active {
+    background-color: white;
+    color: $mainColor;
+    font-weight: 500;
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: $mainColor;
+    transition: all 0.3s ease;
+  }
+}
