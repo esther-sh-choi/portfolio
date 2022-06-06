@@ -1,3 +1,54 @@
-.projects {
-  background-color: lightgreen;
+@import "../../global.scss";
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding-top: 80px;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  ul {
+    margin: 10px;
+    padding-top: 50px;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+
+    li {
+      font-size: 20px;
+      margin: 0 50px;
+      padding: 20px;
+      border-radius: 10px;
+
+      &.active {
+        background-color: white;
+        color: $mainColor;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .container {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 50px;
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
+
+      .icon {
+        font-size: 100px;
+        padding-bottom: 20px;
+      }
+    }
+  }
 }
