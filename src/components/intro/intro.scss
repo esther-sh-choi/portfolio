@@ -3,6 +3,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -35,7 +36,7 @@
       h1.name {
         padding-left: 10px;
         align-self: baseline;
-        font-size: 75px;
+        font-size: 55px;
         // color: #9fafff;
       }
     }
@@ -78,7 +79,7 @@
           font-size: 25px;
         }
         h1.name {
-          font-size: 50px;
+          font-size: 40px;
         }
       }
 
@@ -100,7 +101,7 @@
           font-size: 20px;
         }
         h1.name {
-          font-size: 40px;
+          font-size: 30px;
         }
       }
 
@@ -121,7 +122,7 @@
           font-size: 15px;
         }
         h1.name {
-          font-size: 35px;
+          font-size: 25px;
           padding: 0;
         }
       }

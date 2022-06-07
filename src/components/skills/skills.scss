@@ -9,7 +9,7 @@
   padding-left: 0;
 
   h1 {
-    font-size: 50px;
+    font-size: calc(35px + 0.5vw);
   }
 
   ul {
@@ -23,8 +23,7 @@
   }
 
   .container {
-    width: 80%;
-    height: 40vh;
+    width: 90%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -34,25 +33,32 @@
 
     .item {
       display: flex;
-      width: 100px;
-      height: 180px;
+      width: calc(30px + 1vw);
+      height: calc(150px + 1vw);
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 30px 50px 0 50px;
+      padding: 30px calc(15px + 2vw) 0 calc(15px + 2vw);
 
       .icon {
-        font-size: 70px;
+        font-size: calc(40px + 0.5vw);
         padding-bottom: 20px;
         &:hover {
           font-size: 80px;
           transition: all 0.5s ease;
         }
       }
+
+      h3 {
+        font-size: calc(12px + 0.5vw);
+      }
+      h5 {
+        font-size: calc(8px + 0.5vw);
+      }
     }
   }
   .bg {
-    aspect-ratio: 1500/200;
+    flex-grow: 1;
     width: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -63,3 +69,55 @@
     background-image: url("../../images/wave-bg.svg");
   }
 }
+
+@media screen and (max-width: 765px) {
+  .skills {
+    padding-top: 30px;
+    h1 {
+      font-size: 35px;
+    }
+    ul {
+      padding-top: 20px;
+      li {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .container {
+      padding-top: 20px;
+      .item {
+        .icon {
+          width: 45px;
+
+          h3 {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .bg {
+      background-position-y: -25px;
+      .wave {
+        background-image: url("../../images/wave-bg-tablet.png");
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 1405px) {
+//   .skills {
+//     ul {
+//       padding-top: 30px;
+
+//       li {
+//         font-size: 18px;
+//         padding: 18px;
+//       }
+//     }
+//     .container {
+//       .item {
+//         width: 70px;
+//       }
+//     }
+//   }
+// }
