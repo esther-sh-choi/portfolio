@@ -1,0 +1,19 @@
+.wave-bg {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+
+  svg {
+    width: calc(170% + 1.3px);
+    height: 132px;
+    transform: rotateY(180deg);
+  }
+
+  .shape-fill {
+    fill: #7981da;
+  }
+}
