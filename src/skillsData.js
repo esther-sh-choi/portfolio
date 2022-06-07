@@ -15,7 +15,7 @@ export const frontList = [
   {
     id: 2,
     title: "CSS3",
-    subtitle: ["Flexbox, Grid", "Animation", "Module"],
+    subtitle: ["Flexbox", "Grid", "Animation", "Module"],
     icon: faCss3,
   },
   { id: 3, title: "Sass", icon: faSass },
