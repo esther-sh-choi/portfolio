@@ -1,11 +1,10 @@
 import React from "react";
 import "./skillsList.scss";
 
-function SkillsList({ title, active, setSelected, id, key }) {
+function SkillsList({ title, active, setSelected, id }) {
   return (
     <li
-      className={active ? "skillsList active" : "active"}
-      key={key}
+      className={active ? "skillsList active" : "skillsList"}
       onClick={() => setSelected(id)}
     >
       {title}
