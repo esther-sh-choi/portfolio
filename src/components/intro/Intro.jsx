@@ -19,12 +19,12 @@ function Intro({ setOpenMenu }) {
               options={{ loop: true }}
               getBeforeInit={(instance) => {
                 instance
-                  .type("googling cham")
-                  .pause(700)
-                  .delete(13)
+                  .type("software developer")
+                  .pause(1200)
+                  .delete(18)
                   .pause(500)
-                  .type("web developer")
-                  .pause(2500);
+                  .type("front-end developer")
+                  .pause(1200);
 
                 return instance;
               }}

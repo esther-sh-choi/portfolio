@@ -21,7 +21,7 @@
   ul {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 300px;
     list-style: none;
     font-size: 25px;
     color: $mainColor;
@@ -32,8 +32,11 @@
     align-items: center;
 
     li {
+      margin: 0;
+      padding: 0;
+      border-radius: 0;
       height: 60px;
-      width: 100%;
+      width: 300px;
       display: flex;
       justify-content: center;
       align-items: center;
