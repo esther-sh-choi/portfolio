@@ -59,7 +59,7 @@
 
     .right {
       .menu-icon {
-        font-size: 30px;
+        font-size: calc(20px + 1vw);
         cursor: pointer;
         transition: all 0.5s ease;
       }
@@ -125,6 +125,18 @@
       .right {
         .menu-icon {
           transition: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .navbar {
+    .wrapper {
+      .left {
+        .item-container {
+          padding-left: 10px;
         }
       }
     }

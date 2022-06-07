@@ -37,3 +37,10 @@
     }
   }
 }
+
+@media screen and (max-height: 450px) {
+  .swipe-scroll {
+    height: 80px;
+    top: 90%;
+  }
+}

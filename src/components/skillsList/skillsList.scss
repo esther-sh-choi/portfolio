@@ -1,10 +1,9 @@
 @import "../../global.scss";
 
 li {
-  font-size: 20px;
+  font-size: calc(18px + 0.5vw);
   margin: 0 50px;
   padding: 20px;
-  border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
 
