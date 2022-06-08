@@ -9,7 +9,7 @@ function Menu({ openMenu, setOpenMenu }) {
           <a href="#intro">HOME</a>
         </li>
         <li onClick={() => setOpenMenu(false)}>
-          <a href="#portfolio">SKILLS</a>
+          <a href="#skills">SKILLS</a>
         </li>
         <li onClick={() => setOpenMenu(false)}>
           <a href="#projects">PROJECTS</a>

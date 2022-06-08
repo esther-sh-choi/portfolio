@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./skills.scss";
 import SkillsList from "../skillsList/SkillsList";
-// import WaveBackground from "../background/WaveBackground";
 import { frontList, backList } from "../../skillsData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
