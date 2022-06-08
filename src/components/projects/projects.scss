@@ -5,7 +5,7 @@
   justify-content: center;
 
   .slider {
-    height: 350px;
+    height: 450px;
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -47,14 +47,14 @@
 
         .left {
           flex: 5;
-          height: 80%;
+          height: 100%;
           display: flex;
           align-items: center;
 
           .leftContainer {
             width: 90%;
-            height: 70%;
-            padding: 0 20px;
+            align-self: stretch;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -99,26 +99,41 @@
 
             p {
               font-size: 13px;
+              text-align: justify;
+            }
+
+            ul.tech-list {
+              padding-left: 10px;
+              text-align: justify;
+              li {
+                margin: 0;
+                padding: 2px 0;
+                font-size: 13px;
+              }
             }
 
             .btnContainer {
               align-self: stretch;
               display: flex;
 
-              button {
-                font-weight: 500;
+              a {
                 flex: 1;
-                padding: 5px 0;
                 margin: 0 2px;
+                padding: 5px 0;
                 cursor: pointer;
-                text-decoration: none;
-                outline: none;
-                background-color: #e6e8fd;
-                border: 2px solid #7981da;
 
-                &:hover {
-                  background-color: #7981da;
-                  color: white;
+                button {
+                  font-weight: 500;
+                  width: 100%;
+                  text-decoration: none;
+                  outline: none;
+                  background-color: #e6e8fd;
+                  border: 2px solid #7981da;
+
+                  &:hover {
+                    background-color: #7981da;
+                    color: white;
+                  }
                 }
               }
             }
@@ -126,6 +141,7 @@
         }
         .right {
           flex: 5;
+          flex-shrink: 2;
           height: 100%;
           display: flex;
           padding: 0 20px;

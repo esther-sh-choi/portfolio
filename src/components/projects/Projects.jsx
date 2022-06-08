@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./projects.scss";
 import { projects } from "../../projectsData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faMobileScreen,
-  faDisplay,
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import ladderDemo from "../../images/ladder-demo.gif";
 
 function Projects({ setOpenMenu }) {
-  const [selected, setSelected] = useState(0);
+  const [projectIdx, setProjectIdx] = useState(0);
+  const [project, setProject] = useState(projects[projectIdx]);
+
+  useEffect(() => {
+    setProject(projects[projectIdx]);
+  }, [projectIdx]);
+
+  const rightProjectHandler = () => {
+    if (projectIdx + 1 < projects.length) {
+      setProjectIdx(projectIdx + 1);
+    } else {
+      setProjectIdx(0);
+    }
+  };
+
+  const leftProjectHandler = () => {
+    if (projectIdx === 0) {
+      console.log("hello");
+      setProjectIdx(projects.length - 1);
+    } else {
+      setProjectIdx(projectIdx - 1);
+    }
+  };
 
   return (
     <div className="projects" id="projects" onClick={() => setOpenMenu(false)}>
@@ -21,38 +40,61 @@ function Projects({ setOpenMenu }) {
           icon={faChevronLeft}
           className="arrow left"
           alt="left-arrow"
+          onClick={leftProjectHandler}
         />
         <div className="container">
           <div className="item">
             <div className="left">
               <div className="leftContainer">
                 <div className="iconContainer">
-                  <FontAwesomeIcon
-                    icon={faDisplay}
-                    className="icon"
-                    alt="Desktop Display"
-                  />
-                  <FontAwesomeIcon
-                    icon={faMobileScreen}
-                    className="icon"
-                    alt="Mobile Display"
-                  />
+                  {project.icon.map((element, i) => (
+                    <FontAwesomeIcon
+                      icon={element}
+                      className="icon"
+                      alt="icon display"
+                      key={`${(element, i)}`}
+                    />
+                  ))}
                 </div>
 
-                <h3>Ladder Game for Indecisive People</h3>
+                <h3>{project.title}</h3>
                 <div className="skillsContainer">
-                  <span className="project-skill">React.js</span>
+                  {project.skills.map((skill) => (
+                    <span
+                      className="project-skill"
+                      key={`${project.id}${skill}`}
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
+                <p>{project.description}</p>
+                <ul className="tech-list">
+                  {project.technology.map((content, i) => (
+                    <li key={`${project.id}${i}`}>{content}</li>
+                  ))}
+                </ul>
 
-                <p>HelloHelloHello</p>
                 <div className="btnContainer">
-                  <button className="visit">VISIT</button>
-                  <button>CODE</button>
+                  <a
+                    href="https://adorable-stroopwafel-9cc3ff.netlify.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="visit">VISIT</button>
+                  </a>
+                  <a
+                    href="https://github.com/esther-sh-choi/ladder-game"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button>CODE</button>
+                  </a>
                 </div>
               </div>
             </div>
             <div className="right">
-              <img src={ladderDemo} alt="Ladder game demo thumbnail" />
+              <img src={project.image.src} alt={project.image.alt} />
             </div>
           </div>
         </div>
@@ -60,6 +102,7 @@ function Projects({ setOpenMenu }) {
           icon={faChevronRight}
           className="arrow right"
           alt="right-arrow"
+          onClick={rightProjectHandler}
         />
       </div>
     </div>
