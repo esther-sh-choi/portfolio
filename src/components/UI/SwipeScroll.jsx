@@ -19,7 +19,7 @@ function SwipeScroll() {
 
   return (
     <div className="swipe-scroll">
-      <div className="wrapper">
+      <div className={`wrapper`}>
         {scroll ? <span>scroll</span> : <span>swipe</span>}
         <FontAwesomeIcon icon={faAngleDoubleDown} className="icon arrow" />
       </div>
