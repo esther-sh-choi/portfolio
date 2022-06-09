@@ -4,7 +4,7 @@ import "./modal.scss";
 
 const Modal = (props) => {
   return (
-    <div>
+    <div className="modal">
       <div className="backdrop" onClick={props.onConfirm}></div>
       <div className="container">
         <header className="header">

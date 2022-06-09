@@ -1,40 +1,62 @@
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 3;
-  background: rgba(0, 0, 0, 0.75);
-}
+.modal {
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.75);
+  }
 
-.container {
-  position: fixed;
-  top: 30vh;
-  left: 10%;
-  width: 80%;
-  z-index: 4;
-  overflow: hidden;
-}
+  .container {
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    z-index: 4;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
 
-.header {
-  background: #4f005f;
-  padding: 1rem;
-}
+    .header {
+      padding: 1rem;
+      text-align: center;
+      color: #6052b3;
+    }
 
-.header h2 {
-  margin: 0;
-  color: white;
-}
+    .content {
+      padding: 1rem;
 
-.content {
-  padding: 1rem;
-}
+      p {
+        text-align: center;
+      }
+    }
 
-.actions {
-  padding: 1rem;
-  display: flex;
-  justify-content: flex-end;
+    .actions {
+      padding: 1rem;
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        width: 50px;
+        height: 30px;
+        color: white;
+        background-color: #6052b3;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 500;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #42387b;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
