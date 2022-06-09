@@ -4,12 +4,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: black;
   color: white;
   padding-top: calc(20px + 1vh);
   padding-left: 0;
 
   h1 {
     font-size: calc(35px + 1vw);
+    margin-top: 70px;
   }
 
   ul {
@@ -83,7 +85,7 @@
     flex-grow: 1;
     width: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position-y: -30px;
     background-size: cover;
     overflow: hidden;
   }
@@ -159,7 +161,6 @@
       }
     }
     .bg {
-      width: 110vw;
       .wave {
         background-image: url("../../images/wave-bg-phone.svg");
       }
@@ -167,7 +168,7 @@
   }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-width: 275px) {
   .skills {
     padding-top: 15px;
     h1 {

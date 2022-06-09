@@ -1,157 +1,209 @@
+@import "../../global.scss";
+
 .projects {
   background-color: #b6bcfa;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  .slider {
-    height: 450px;
+  h1 {
+    color: rgb(70, 59, 125);
+    margin-top: 120px;
+    text-align: center;
     width: 100vw;
+    font-size: calc(30px + 1vw);
+  }
+
+  .counters {
+    width: 150px;
+    height: 100px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+
+    span {
+      height: 10px;
+      width: 10px;
+      background-color: rgb(70, 59, 125);
+      border-radius: 50%;
+      margin: 0 2px;
+      transition: all 0.3s ease;
+    }
+  }
+
+  .mainContainer {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
 
     .arrow {
       font-size: calc(30px + 1vw);
-      align-self: center;
+      position: absolute;
       padding: 20px;
       border-radius: 10px;
       color: white;
+      margin: 0 calc(50px + 1vw);
       cursor: pointer;
+      z-index: 1;
+
+      // @include mobile {
+      //   display: none;
+      // }
 
       &.left {
-        left: 50px;
+        left: 100px;
       }
       &.right {
-        right: 50px;
+        right: 100px;
       }
 
       &:hover {
-        background-color: #7981da;
+        background-color: #7981da7a;
       }
     }
 
-    .container {
+    .slider {
+      height: 450px;
+      position: absolute;
+      left: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      transition: all 0.5s ease-out;
 
-      .item {
-        width: 700px;
-        height: 100%;
-        background-color: white;
-        border-radius: 20px;
+      // @include mobile {
+      //   height: 100vh;
+      //   flex-direction: column;
+      //   justify-content: center;
+      // }
+
+      .container {
+        width: 100vw;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
 
-        .left {
-          flex: 5;
+        .item {
+          width: 700px;
           height: 100%;
+          background-color: white;
+          border-radius: 20px;
           display: flex;
           align-items: center;
+          justify-content: center;
+          box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
 
-          .leftContainer {
-            width: 90%;
-            align-self: stretch;
-            padding: 20px;
+          .left {
+            flex: 5;
+            height: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
 
-            .iconContainer {
-              color: white;
-              align-self: center;
-              display: flex;
-              justify-content: center;
-              .icon {
-                // font-size: 20px;
-                width: 20px;
-                height: 20px;
-                background-color: #7981da;
-                padding: 7px;
-                margin: 0 5px;
-                border-radius: 50%;
-              }
-            }
-
-            h3 {
-              font-size: 20px;
-
-              text-align: center;
-            }
-
-            .skillsContainer {
+            .leftContainer {
+              width: 90%;
               align-self: stretch;
+              padding: 20px;
               display: flex;
-              justify-content: center;
-              color: white;
-              span.project-skill {
-                background-color: #7981da;
-                align-self: flex-start;
-                padding: 5px 8px;
-                border-radius: 5px;
-                margin-right: 2px;
-                font-size: 15px;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-start;
+
+              .iconContainer {
+                color: white;
+                align-self: center;
+                display: flex;
+                justify-content: center;
+                .icon {
+                  // font-size: 20px;
+                  width: 20px;
+                  height: 20px;
+                  background-color: #7981da;
+                  padding: 7px;
+                  margin: 0 5px;
+                  border-radius: 50%;
+                }
               }
-            }
 
-            p {
-              font-size: 13px;
-              text-align: justify;
-            }
+              h3 {
+                width: 100%;
+                font-size: 20px;
+                text-align: center;
+              }
 
-            ul.tech-list {
-              padding-left: 10px;
-              text-align: justify;
-              li {
-                margin: 0;
-                padding: 2px 0;
+              .skillsContainer {
+                align-self: stretch;
+                display: flex;
+                justify-content: center;
+                color: white;
+                span.project-skill {
+                  background-color: #7981da;
+                  align-self: flex-start;
+                  padding: 5px 8px;
+                  border-radius: 5px;
+                  margin-right: 2px;
+                  font-size: 15px;
+                }
+              }
+
+              p {
                 font-size: 13px;
+                text-align: justify;
               }
-            }
 
-            .btnContainer {
-              align-self: stretch;
-              display: flex;
+              ul.tech-list {
+                padding-left: 10px;
+                text-align: justify;
+                li {
+                  margin: 0;
+                  padding: 2px 0;
+                  font-size: 13px;
+                }
+              }
 
-              a {
-                flex: 1;
-                margin: 0 2px;
-                padding: 5px 0;
-                cursor: pointer;
+              .btnContainer {
+                align-self: stretch;
+                display: flex;
 
-                button {
-                  font-weight: 500;
-                  width: 100%;
-                  text-decoration: none;
-                  outline: none;
-                  background-color: #e6e8fd;
-                  border: 2px solid #7981da;
+                a {
+                  flex: 1;
+                  margin: 0 2px;
 
-                  &:hover {
-                    background-color: #7981da;
-                    color: white;
+                  cursor: pointer;
+
+                  button {
+                    font-weight: 500;
+                    width: 100%;
+                    padding: 5px 0;
+                    text-decoration: none;
+                    outline: none;
+                    background-color: #e6e8fd;
+                    border: 2px solid #7981da;
+                    border-radius: 5px;
+
+                    &:hover {
+                      background-color: #7981da;
+                      color: white;
+                    }
                   }
                 }
               }
             }
           }
-        }
-        .right {
-          flex: 5;
-          flex-shrink: 2;
-          height: 100%;
-          display: flex;
-          padding: 0 20px;
-          background-color: #7981da;
-          border-bottom-right-radius: inherit;
-          border-top-right-radius: inherit;
+          .right {
+            flex: 4;
+            flex-shrink: 2;
+            height: 100%;
+            display: flex;
+            padding: 0 20px;
+            background-color: #7981da;
+            border-bottom-right-radius: inherit;
+            border-top-right-radius: inherit;
 
-          img {
-            width: 100%;
-            object-fit: scale-down;
+            img {
+              width: 100%;
+              object-fit: scale-down;
+            }
           }
         }
       }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./projects.scss";
 import { projects } from "../../projectsData";
 
@@ -9,101 +9,108 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Projects({ setOpenMenu }) {
-  const [projectIdx, setProjectIdx] = useState(0);
-  const [project, setProject] = useState(projects[projectIdx]);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  useEffect(() => {
-    setProject(projects[projectIdx]);
-  }, [projectIdx]);
-
-  const rightProjectHandler = () => {
-    if (projectIdx + 1 < projects.length) {
-      setProjectIdx(projectIdx + 1);
-    } else {
-      setProjectIdx(0);
-    }
-  };
-
-  const leftProjectHandler = () => {
-    if (projectIdx === 0) {
-      console.log("hello");
-      setProjectIdx(projects.length - 1);
-    } else {
-      setProjectIdx(projectIdx - 1);
-    }
+  const slideHandler = (direction) => {
+    direction === "left"
+      ? setCurrentSlide(
+          currentSlide > 0 ? currentSlide - 1 : projects.length - 1
+        )
+      : setCurrentSlide(
+          currentSlide === projects.length - 1 ? 0 : currentSlide + 1
+        );
   };
 
   return (
     <div className="projects" id="projects" onClick={() => setOpenMenu(false)}>
-      <div className="slider">
+      <h1>Projects</h1>
+
+      <div className="mainContainer">
         <FontAwesomeIcon
           icon={faChevronLeft}
           className="arrow left"
           alt="left-arrow"
-          onClick={leftProjectHandler}
+          onClick={() => slideHandler("left")}
         />
-        <div className="container">
-          <div className="item">
-            <div className="left">
-              <div className="leftContainer">
-                <div className="iconContainer">
-                  {project.icon.map((element, i) => (
-                    <FontAwesomeIcon
-                      icon={element}
-                      className="icon"
-                      alt="icon display"
-                      key={`${(element, i)}`}
-                    />
-                  ))}
-                </div>
+        <div
+          className="slider"
+          style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+        >
+          {projects.map((project) => (
+            <div className="container" key={project.id}>
+              <div className="item">
+                <div className="left">
+                  <div className="leftContainer">
+                    <div className="iconContainer">
+                      {project.icon.map((element, i) => (
+                        <FontAwesomeIcon
+                          icon={element}
+                          className="icon"
+                          alt="icon display"
+                          key={`${(element, i)}`}
+                        />
+                      ))}
+                    </div>
 
-                <h3>{project.title}</h3>
-                <div className="skillsContainer">
-                  {project.skills.map((skill) => (
-                    <span
-                      className="project-skill"
-                      key={`${project.id}${skill}`}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <p>{project.description}</p>
-                <ul className="tech-list">
-                  {project.technology.map((content, i) => (
-                    <li key={`${project.id}${i}`}>{content}</li>
-                  ))}
-                </ul>
+                    <h3>{project.title}</h3>
+                    <div className="skillsContainer">
+                      {project.skills.map((skill) => (
+                        <span
+                          className="project-skill"
+                          key={`${project.id}${skill}`}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    <p>{project.description}</p>
+                    <ul className="tech-list">
+                      {project.technology.map((content, i) => (
+                        <li key={`${project.id}${i}`}>{content}</li>
+                      ))}
+                    </ul>
 
-                <div className="btnContainer">
-                  <a
-                    href="https://adorable-stroopwafel-9cc3ff.netlify.app/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <button className="visit">VISIT</button>
-                  </a>
-                  <a
-                    href="https://github.com/esther-sh-choi/ladder-game"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <button>CODE</button>
-                  </a>
+                    <div className="btnContainer">
+                      <a
+                        href={project.links.website}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <button className="visit">VISIT</button>
+                      </a>
+                      <a
+                        href={project.links.github}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <button>CODE</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="right">
+                  <img src={project.image.src} alt={project.image.alt} />
                 </div>
               </div>
             </div>
-            <div className="right">
-              <img src={project.image.src} alt={project.image.alt} />
-            </div>
-          </div>
+          ))}
         </div>
         <FontAwesomeIcon
           icon={faChevronRight}
           className="arrow right"
-          alt="right-arrow"
-          onClick={rightProjectHandler}
+          alt="right arrow"
+          onClick={() => slideHandler()}
         />
+      </div>
+      <div className="counters">
+        {projects.map((project, i) => (
+          <span
+            className={`project${i}`}
+            style={{
+              backgroundColor: i === currentSlide ? "#fff" : "rgb(70, 59, 125)",
+            }}
+          />
+        ))}
       </div>
     </div>
   );

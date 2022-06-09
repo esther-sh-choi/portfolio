@@ -1,12 +1,10 @@
 .app {
   height: 100vh;
-  background-color: black;
+
   .sections {
     width: 100%;
-    top: 70px;
-    height: calc(100vh - 70px);
+    height: 100%;
 
-    background-color: black;
     position: relative;
 
     overflow: auto;
@@ -19,16 +17,16 @@
 
     > * {
       width: 100vw;
-      height: calc(100vh - 70px);
+      height: 100%;
       scroll-snap-align: start;
     }
   }
 }
 
-@media screen and (max-width: 440px) {
-  .app {
-    .sections {
-      top: 50px;
-    }
-  }
-}
+// @media screen and (max-width: 440px) {
+//   .app {
+//     .sections {
+//       top: 50px;
+//     }
+//   }
+// }
