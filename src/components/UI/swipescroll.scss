@@ -16,6 +16,10 @@
     color: transparent;
     font-size: 12px;
 
+    &.hidden {
+      display: none;
+    }
+
     &:hover {
       color: white;
       transition: all 0.5s ease;

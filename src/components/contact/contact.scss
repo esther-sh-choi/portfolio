@@ -1,3 +1,146 @@
 .contact {
-  background-color: lightblue;
+  color: white;
+  background-color: black;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .left {
+    align-self: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    form {
+      width: 70%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      caret-color: #ff06fb;
+
+      input {
+        width: 70%;
+        height: 25px;
+        padding: 5px 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.331) inset;
+
+        &:focus {
+          outline: 4px ridge #b7b8ff;
+        }
+
+        &::-moz-selection {
+          /* Code for Firefox */
+          background: #b7b8ff;
+        }
+
+        &::selection {
+          background: #b7b8ff;
+        }
+
+        &::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: #7981da;
+        }
+        &::-moz-placeholder {
+          /* Firefox 19+ */
+          color: #7981da;
+        }
+        &:-ms-input-placeholder {
+          /* IE 10+ */
+          color: #7981da;
+        }
+        &:-moz-placeholder {
+          /* Firefox 18- */
+          color: #7981da;
+        }
+      }
+
+      textarea {
+        width: 70%;
+        height: 200px;
+        padding: 10px;
+        font-size: 15px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.331) inset;
+        resize: none;
+
+        &:focus {
+          outline: 4px ridge #b7b8ff;
+        }
+
+        &::-moz-selection {
+          /* Code for Firefox */
+          background: #b7b8ff;
+        }
+
+        &::selection {
+          background: #b7b8ff;
+        }
+
+        &::-webkit-input-placeholder {
+          /* Chrome/Opera/Safari */
+          color: #7981da;
+        }
+        &::-moz-placeholder {
+          /* Firefox 19+ */
+          color: #7981da;
+        }
+        &:-ms-input-placeholder {
+          /* IE 10+ */
+          color: #7981da;
+        }
+        &:-moz-placeholder {
+          /* Firefox 18- */
+          color: #7981da;
+        }
+      }
+
+      button {
+        width: 200px;
+        height: 45px;
+        color: white;
+        background-color: #6052b3;
+        border: 3px solid #000000;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #42387b;
+        }
+
+        &:focus {
+          outline: none;
+          border: 2px solid #ffffff;
+        }
+      }
+
+      // span {
+      //   color: green;
+      // }
+    }
+  }
+  .right {
+    flex: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+
+    img {
+      width: 100%;
+    }
+  }
 }
