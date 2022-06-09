@@ -8,9 +8,9 @@ export const projects = [
     title: "Ladder Game for Indecisive People",
     skills: ["Figma", "React.js", "CSS Module"],
     description:
-      "Assigning roles for a project or choosing who brings the dessert for a potluck can be a daunting task for indecisive people. Each person can simply choose an animal character after inputing the corresponding number of options. Then, let the ladder algorithm decide who will take what option!",
+      "Assigning roles for the next project or deciding who will bring the dessert for a potluck dinner can be a daunting task for a group of indecisive people. Each person can simply choose an animal character after inputing possible outcomes. Then, let the ladder algorithm determine the roles or even tell you who the winner will be!",
     technology: [
-      "Technology: Howler, Context API, React hooks (useHistory, useRef, useContext), localStorage, Canvas API",
+      "Technology: Howler, Context API, React hooks (useState, useEffect, useHistory, useRef, useContext), localStorage, Canvas API",
       "Built ladder algorithm from scratch",
       "Dynamic website based on the number of players",
     ],
@@ -18,9 +18,29 @@ export const projects = [
       src: ladderDemo,
       alt: "Ladder game demo thumbnail",
     },
+    links: {
+      website: "https://adorable-stroopwafel-9cc3ff.netlify.app/",
+      github: "https://github.com/esther-sh-choi/ladder-game",
+    },
   },
   {
-    status: "comingSoon",
+    icon: [faDisplay, faMobileScreen],
+    id: 1357,
+    title: "Project Portfolio Website",
+    skills: ["React.js", "SCSS"],
+    description:
+      "Elegant and responsive, single-page react web application. The responsive design allows for smooth user interface and experience in various screen sizes. I made use of up-to-date and trendy design features for great aesthetics.",
+    technology: ["Technology: Sass", "CSS capabilities (animation)"],
+    image: {
+      src: ladderDemo,
+      alt: "Foodify demo thumbnail",
+    },
+    links: {
+      website: "",
+      github: "",
+    },
+  },
+  {
     icon: [faDisplay, faMobileScreen],
     id: 5678,
     title: "Foodify - Playlist of Restaurants",
@@ -30,11 +50,15 @@ export const projects = [
     technology: [
       "Technology: Google Places API, React hooks (useHistory, useRef, useContext), Redux",
       "CRUD website",
-      "Sign-up and login",
+      "User authentication using Node.js",
     ],
     image: {
       src: ladderDemo,
-      alt: "Ladder game demo thumbnail",
+      alt: "Foodify demo thumbnail",
+    },
+    links: {
+      website: "",
+      github: "",
     },
   },
 ];
