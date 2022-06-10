@@ -6,24 +6,41 @@
   flex-direction: column;
   align-items: center;
 
+  overflow: hidden;
+  width: 100%;
+
   h1 {
     color: rgb(70, 59, 125);
-    margin-top: 120px;
+    margin-top: calc(50px + 4vh);
     text-align: center;
     width: 100vw;
-    font-size: calc(30px + 1vw);
+    font-size: calc(25px + 1vw);
+
+    @include mobile {
+      margin-top: 50px;
+      font-size: calc(20px + 1vw);
+    }
   }
 
   .counters {
     width: 150px;
-    height: 100px;
+    height: calc(40px + 2vh);
     display: flex;
     justify-content: center;
+    z-index: 4;
+
+    @include tablet {
+      height: 70px;
+    }
+
+    @include mobile {
+      height: 50px;
+    }
 
     span {
       height: 10px;
       width: 10px;
-      background-color: rgb(70, 59, 125);
+      border: 2px solid rgb(70, 59, 125);
       border-radius: 50%;
       margin: 0 2px;
       transition: all 0.3s ease;
@@ -31,7 +48,6 @@
   }
 
   .mainContainer {
-    flex-grow: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,19 +61,18 @@
       padding: 20px;
       border-radius: 10px;
       color: white;
-      margin: 0 calc(50px + 1vw);
       cursor: pointer;
       z-index: 1;
 
-      // @include mobile {
-      //   display: none;
-      // }
+      @include tablet {
+        display: none;
+      }
 
       &.left {
-        left: 100px;
+        left: calc(20px + 0.5vw);
       }
       &.right {
-        right: 100px;
+        right: calc(20px + 0.5vw);
       }
 
       &:hover {
@@ -66,17 +81,11 @@
     }
 
     .slider {
-      height: 450px;
+      height: 100vh;
       position: absolute;
       left: 0;
       display: flex;
       transition: all 0.5s ease-out;
-
-      // @include mobile {
-      //   height: 100vh;
-      //   flex-direction: column;
-      //   justify-content: center;
-      // }
 
       .container {
         width: 100vw;
@@ -84,9 +93,14 @@
         align-items: center;
         justify-content: center;
 
+        @include mobile {
+          height: calc(100vh - 100px);
+          margin-top: 70px;
+        }
+
         .item {
-          width: 700px;
-          height: 100%;
+          width: calc(600px + 2vw);
+          height: calc(400px + 2vw);
           background-color: white;
           border-radius: 20px;
           display: flex;
@@ -94,11 +108,24 @@
           justify-content: center;
           box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5);
 
+          @include mobile {
+            width: 95%;
+            height: 100%;
+            flex-flow: column-reverse;
+            overflow: hidden;
+            border-radius: 10px;
+          }
+
           .left {
             flex: 5;
             height: 100%;
             display: flex;
             align-items: center;
+
+            @include mobile {
+              flex: 0 1 auto;
+              justify-content: center;
+            }
 
             .leftContainer {
               width: 90%;
@@ -109,19 +136,30 @@
               justify-content: space-between;
               align-items: flex-start;
 
+              @include mobile {
+                align-items: stretch;
+                padding: 5px;
+                padding-bottom: 50px;
+              }
+
               .iconContainer {
                 color: white;
                 align-self: center;
                 display: flex;
                 justify-content: center;
-                .icon {
-                  // font-size: 20px;
-                  width: 20px;
-                  height: 20px;
+                .icon-bg {
+                  width: 25px;
+                  height: 25px;
                   background-color: #7981da;
-                  padding: 7px;
-                  margin: 0 5px;
                   border-radius: 50%;
+                  margin: 0 5px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  .icon {
+                    font-size: 15px;
+                  }
                 }
               }
 
@@ -129,6 +167,10 @@
                 width: 100%;
                 font-size: 20px;
                 text-align: center;
+
+                @include galaxyFold {
+                  font-size: 16px;
+                }
               }
 
               .skillsContainer {
@@ -143,12 +185,22 @@
                   border-radius: 5px;
                   margin-right: 2px;
                   font-size: 15px;
+
+                  @include galaxyFold {
+                    font-size: 13px;
+                  }
                 }
               }
 
               p {
                 font-size: 13px;
                 text-align: justify;
+                @include mobile {
+                  font-size: 15px;
+                }
+                @include galaxyFold {
+                  font-size: 13px;
+                }
               }
 
               ul.tech-list {
@@ -158,6 +210,16 @@
                   margin: 0;
                   padding: 2px 0;
                   font-size: 13px;
+                  @include mobile {
+                    font-size: 15px;
+                  }
+                  @include galaxyFold {
+                    font-size: 13px;
+                  }
+                }
+
+                @include mobile {
+                  padding-bottom: 5px;
                 }
               }
 
@@ -173,6 +235,7 @@
 
                   button {
                     font-weight: 500;
+                    font-size: 15px;
                     width: 100%;
                     padding: 5px 0;
                     text-decoration: none;
@@ -180,6 +243,7 @@
                     background-color: #e6e8fd;
                     border: 2px solid #7981da;
                     border-radius: 5px;
+                    color: black;
 
                     &:hover {
                       background-color: #7981da;
@@ -193,15 +257,25 @@
           .right {
             flex: 4;
             height: 100%;
-            display: flex;
             padding: 0 20px;
             background-color: #7981da;
             border-bottom-right-radius: inherit;
             border-top-right-radius: inherit;
+            display: flex;
+
+            @include mobile {
+              background: none;
+              align-items: center;
+              flex: 1 2 auto;
+            }
 
             img {
               width: 100%;
               object-fit: scale-down;
+
+              @include mobile {
+                height: 95%;
+              }
             }
           }
         }

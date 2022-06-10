@@ -12,6 +12,10 @@
   h1 {
     font-size: calc(35px + 1vw);
     margin-top: 70px;
+
+    @include galaxyFold {
+      margin-top: 30px;
+    }
   }
 
   ul {
@@ -62,6 +66,11 @@
       align-items: center;
       justify-content: flex-start;
       padding: calc(10px + 1vh) calc(30px + 1vw) 0 calc(30px + 1vw);
+
+      @include galaxyFold {
+        margin-top: 0;
+        padding: 0 20px;
+      }
 
       .icon {
         font-size: calc(40px + 0.5vw);
@@ -147,7 +156,7 @@
 @media screen and (max-width: 455px) {
   .skills {
     ul {
-      padding-top: 20px;
+      padding-top: 15px;
     }
     .container {
       .item {

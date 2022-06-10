@@ -2,8 +2,25 @@ $mainColor: #1b2442;
 $lightMainColor: #f5f5ff;
 $lightMainColorTransparent: #f5f5ffc3;
 
-// .color1 {color: #000001;}
-// .color2 {color: #1b2442;}
-// .color3 {color: #454f89;}
-// .color4 {color: #7981da;}
-// .color5 {color: #b7b8ff;}
+$tabletWidth: 800px;
+$mobileWidth: 625px;
+$foldWidth: 285px;
+$foldHeight: 655px;
+
+@mixin tablet {
+  @media (max-width: #{$tabletWidth}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobileWidth}) {
+    @content;
+  }
+}
+
+@mixin galaxyFold {
+  @media (max-width: #{$foldWidth}) and (max-height: #{$foldHeight}) {
+    @content;
+  }
+}
