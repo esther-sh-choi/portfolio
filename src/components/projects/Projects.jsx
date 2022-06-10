@@ -14,7 +14,7 @@ function Projects({ setOpenMenu }) {
   const [touchEnd, setTouchEnd] = useState(null);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 4;
 
   const onTouchStart = (e) => {
     setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
@@ -29,7 +29,7 @@ function Projects({ setOpenMenu }) {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
     if (isLeftSwipe || isRightSwipe) {
-      isLeftSwipe ? slideHandler("left") : slideHandler("right");
+      isLeftSwipe ? slideHandler("right") : slideHandler("left");
     }
   };
 
@@ -53,13 +53,13 @@ function Projects({ setOpenMenu }) {
           className="arrow left"
           alt="left-arrow"
           onClick={() => slideHandler("left")}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
         />
         <div
           className="slider"
           style={{ transform: `translateX(-${currentSlide * 100}vw)` }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         >
           {projects.map((project) => (
             <div className="container" key={project.id}>
@@ -127,9 +127,6 @@ function Projects({ setOpenMenu }) {
           className="arrow right"
           alt="right arrow"
           onClick={() => slideHandler()}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
         />
       </div>
       <div className="counters">
@@ -148,3 +145,7 @@ function Projects({ setOpenMenu }) {
 }
 
 export default Projects;
+
+// onTouchStart={onTouchStart}
+// onTouchMove={onTouchMove}
+// onTouchEnd={onTouchEnd}
