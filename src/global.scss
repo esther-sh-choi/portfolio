@@ -2,10 +2,21 @@ $mainColor: #1b2442;
 $lightMainColor: #f5f5ff;
 $lightMainColorTransparent: #f5f5ffc3;
 
-$tabletWidth: 800px;
+$tabletWidth: 760px;
 $mobileWidth: 625px;
+
 $foldWidth: 285px;
 $foldHeight: 655px;
+
+$iPSEWidth: 376px;
+$iPSEHeight: 668px;
+
+// iPad Air, iPad Pro, Surface Pro 7
+$iPAirWidth: 1024px;
+$iPAirHeight: 1368px;
+
+$nestHubWidth: 1024px;
+$nestHubHeight: 600px;
 
 @mixin tablet {
   @media (max-width: #{$tabletWidth}) {
@@ -21,6 +32,24 @@ $foldHeight: 655px;
 
 @mixin galaxyFold {
   @media (max-width: #{$foldWidth}) and (max-height: #{$foldHeight}) {
+    @content;
+  }
+}
+
+@mixin iPhoneSE {
+  @media (max-width: #{$iPSEWidth}) and (max-height: #{$iPSEHeight}) {
+    @content;
+  }
+}
+
+@mixin iPadAir {
+  @media (max-width: #{$iPAirWidth}) and (max-height: #{$iPAirHeight}) {
+    @content;
+  }
+}
+
+@mixin nestHub {
+  @media (max-width: #{$nestHubWidth}) and (max-height: #{$nestHubHeight}) {
     @content;
   }
 }
