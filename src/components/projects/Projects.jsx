@@ -10,6 +10,28 @@ import {
 
 function Projects({ setOpenMenu }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // the required distance between touchStart and touchEnd to be detected as a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe || isRightSwipe) {
+      isLeftSwipe ? slideHandler("left") : slideHandler("right");
+    }
+  };
 
   const slideHandler = (direction) => {
     direction === "left"
@@ -31,6 +53,9 @@ function Projects({ setOpenMenu }) {
           className="arrow left"
           alt="left-arrow"
           onClick={() => slideHandler("left")}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         />
         <div
           className="slider"
@@ -43,12 +68,14 @@ function Projects({ setOpenMenu }) {
                   <div className="leftContainer">
                     <div className="iconContainer">
                       {project.icon.map((element, i) => (
-                        <FontAwesomeIcon
-                          icon={element}
-                          className="icon"
-                          alt="icon display"
-                          key={`${(element, i)}`}
-                        />
+                        <span className="icon-bg">
+                          <FontAwesomeIcon
+                            icon={element}
+                            className="icon"
+                            alt="icon display"
+                            key={`${(element, i)}`}
+                          />
+                        </span>
                       ))}
                     </div>
 
@@ -100,6 +127,9 @@ function Projects({ setOpenMenu }) {
           className="arrow right"
           alt="right arrow"
           onClick={() => slideHandler()}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
         />
       </div>
       <div className="counters">
@@ -107,7 +137,8 @@ function Projects({ setOpenMenu }) {
           <span
             className={`project${i}`}
             style={{
-              backgroundColor: i === currentSlide ? "#fff" : "rgb(70, 59, 125)",
+              backgroundColor:
+                i === currentSlide ? "rgb(70, 59, 125)" : "white",
             }}
           />
         ))}
