@@ -11,7 +11,7 @@ export default function Contact({ setOpenMenu }) {
 
     setMessageModal({
       title: "Success!",
-      message: "Thank you for reaching out! I will reply to you shortly.",
+      message: "Thank you for reaching out! You will receive a reply shortly.",
     });
   };
 
