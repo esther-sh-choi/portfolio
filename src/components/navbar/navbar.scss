@@ -57,6 +57,38 @@
     }
 
     .right {
+      .link-container {
+        ul {
+          list-style: none;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          padding: 0;
+
+          li {
+            text-align: center;
+            margin: 0;
+            height: inherit;
+            padding: 0 20px;
+            font-size: calc(12px + 0.5vw);
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.91);
+              color: #403776;
+            }
+
+            a {
+              text-decoration: none;
+              color: inherit;
+            }
+          }
+        }
+      }
+
       .menu-icon {
         font-size: calc(20px + 1vw);
         cursor: pointer;

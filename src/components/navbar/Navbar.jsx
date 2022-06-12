@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import "./navbar.scss";
 import "../../global.scss";
@@ -13,6 +13,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar({ openMenu, setOpenMenu }) {
+  const [button, setButton] = useState(false);
+
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  };
+  useEffect(() => {}, []);
+  window.addEventListener("resize", showButton);
+
   return (
     <div className={`navbar ${openMenu && "active"}`}>
       <div className="wrapper">
@@ -60,11 +72,31 @@ export default function Navbar({ openMenu, setOpenMenu }) {
           </div>
         </div>
         <div className="right">
-          <FontAwesomeIcon
-            icon={openMenu ? faXmark : faBars}
-            className="icon menu-icon"
-            onClick={() => setOpenMenu(!openMenu)}
-          />
+          {button && (
+            <div className="link-container">
+              <ul>
+                <li>
+                  <a href="#intro">HOME</a>
+                </li>
+                <li>
+                  <a href="#skills">SKILLS</a>
+                </li>
+                <li>
+                  <a href="#projects">PROJECTS</a>
+                </li>
+                <li>
+                  <a href="#contact">CONTACT ME</a>
+                </li>
+              </ul>
+            </div>
+          )}
+          {!button && (
+            <FontAwesomeIcon
+              icon={openMenu ? faXmark : faBars}
+              className="icon menu-icon"
+              onClick={() => setOpenMenu(!openMenu)}
+            />
+          )}
         </div>
       </div>
     </div>
