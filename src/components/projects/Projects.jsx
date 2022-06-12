@@ -145,7 +145,3 @@ function Projects({ setOpenMenu }) {
 }
 
 export default Projects;
-
-// onTouchStart={onTouchStart}
-// onTouchMove={onTouchMove}
-// onTouchEnd={onTouchEnd}
