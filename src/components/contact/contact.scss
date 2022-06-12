@@ -33,11 +33,11 @@
 
     @include tablet {
       background-color: rgba(0, 0, 0, 0.557);
-      height: 70%;
+      height: 75%;
     }
     @include iPadAir {
       background-color: rgba(0, 0, 0, 0.557);
-      height: 70%;
+      height: 75%;
     }
 
     h2 {
@@ -49,13 +49,13 @@
       }
       @include iPadAir {
         position: relative;
-        top: calc(100px + 2vh);
+        top: calc(70px + 2vh);
         font-size: 40px;
       }
       @include mobile {
         position: relative;
         top: 60px;
-        font-size: 25px;
+        font-size: 30px;
       }
       @include galaxyFold {
         font-size: 20px;
@@ -217,6 +217,42 @@
         }
       }
     }
+
+    .links {
+      margin-top: 30px;
+      background-color: #c4bdf3c4;
+      padding: 3px 7px;
+      border-radius: 5px;
+
+      .link {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+
+        .icon {
+          margin-right: 10px;
+          font-size: calc(18px + 0.3vw);
+          color: black;
+        }
+        p {
+          font-size: calc(12px + 0.3vw);
+          color: black;
+          a {
+            margin-left: 3px;
+            padding: 2px 5px;
+            text-decoration: none;
+            font-size: inherit;
+            color: inherit;
+            border-radius: 5px;
+
+            &:hover {
+              background-color: white;
+              color: black;
+            }
+          }
+        }
+      }
+    }
   }
   .right {
     flex: 1;
@@ -226,7 +262,8 @@
 
     img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
     }
 
     @include tablet {
@@ -235,6 +272,32 @@
 
     @include iPadAir {
       display: none;
+    }
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .contact {
+    position: relative;
+    .left {
+      .links {
+        margin: 0;
+        position: absolute;
+        bottom: 10px;
+        padding: 0 5px;
+
+        icon {
+          font-size: 13px;
+        }
+        p {
+          font-size: 12px;
+
+          a {
+            margin-left: 0;
+            padding: 2px 3px;
+          }
+        }
+      }
     }
   }
 }
