@@ -1,13 +1,35 @@
 @import "../../global.scss";
 
 .projects {
-  background-color: #b6bcfa;
+  background: rgb(219, 222, 255);
+  background: linear-gradient(
+    158deg,
+    rgb(209, 111, 211) 0%,
+    rgb(182, 188, 255) 40%,
+    rgb(180, 186, 255) 70%,
+    #6388ff 100%
+  );
+  background-size: 200% 200%;
+  position: relative;
+  animation: change 5s ease-in-out infinite;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-
   overflow: hidden;
   width: 100%;
+
+  @keyframes change {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
 
   h1 {
     color: rgb(70, 59, 125);
