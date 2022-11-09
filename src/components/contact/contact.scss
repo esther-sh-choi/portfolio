@@ -169,7 +169,7 @@
       }
 
       button {
-        width: 72%;
+        width: 100px;
         height: 45px;
         color: white;
         background-color: #6052b3;
@@ -180,10 +180,10 @@
         cursor: pointer;
 
         @include tablet {
-          width: 75%;
+          width: 50%;
         }
         @include iPadAir {
-          width: 75%;
+          width: 50%;
         }
 
         &:hover {

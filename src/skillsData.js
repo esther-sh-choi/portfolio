@@ -4,11 +4,11 @@ import {
   faReact,
   faJsSquare,
   faSass,
-  faBootstrap,
   faNodeJs,
   faFigma,
   faGithubSquare,
 } from "@fortawesome/free-brands-svg-icons";
+import { faM } from "@fortawesome/free-solid-svg-icons";
 
 export const frontList = [
   { id: 1, title: "HTML5", icon: faHtml5 },
@@ -23,6 +23,8 @@ export const frontList = [
   { id: 5, title: "React.js", icon: faReact },
   { id: 6, title: "Github", icon: faGithubSquare },
   { id: 7, title: "Figma", icon: faFigma },
+  { id: 8, title: "Material UI", icon: faM },
+  { id: 9, title: "TypeScript", icon: faJsSquare },
 ];
 
 export const backList = [

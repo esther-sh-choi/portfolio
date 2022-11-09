@@ -61,8 +61,9 @@ export default function Skills({ setOpenMenu }) {
           </div>
         ))}
       </div>
-
-      <div className="bg wave"></div>
+      <div className="bg wave">
+        {/* <image src="../../images/wave-bg.svg" /> */}
+      </div>
     </div>
   );
 }
