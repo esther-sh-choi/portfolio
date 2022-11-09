@@ -16,7 +16,7 @@ export default function Navbar({ openMenu, setOpenMenu }) {
   const [button, setButton] = useState(false);
 
   const showButton = () => {
-    if (window.innerWidth <= 960) {
+    if (window.innerWidth <= 1024) {
       setButton(false);
     } else {
       setButton(true);

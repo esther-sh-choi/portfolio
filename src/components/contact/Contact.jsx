@@ -90,30 +90,30 @@ export default function Contact({ setOpenMenu }) {
           </form>
           <div className="links">
             <div className="link">
-              <FontAwesomeIcon icon={faLinkedin} className="icon" />
-              <p>
-                Linkedin:
-                <a
-                  href="http://www.linkedin.com/in/esther--choi"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  http://www.linkedin.com/in/esther--choi
-                </a>
-              </p>
+              <a
+                href="http://www.linkedin.com/in/esther--choi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="icon" />
+                <p className="link-label">Linkedin</p>
+                <p className="link-content">
+                  : http://www.linkedin.com/in/esther--choi
+                </p>
+              </a>
             </div>
             <div className="link">
-              <FontAwesomeIcon icon={faGithubSquare} className="icon" />
-              <p>
-                Github:
-                <a
-                  href="https://github.com/esther-sh-choi"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  https://github.com/esther-sh-choi
-                </a>
-              </p>
+              <a
+                href="https://github.com/esther-sh-choi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithubSquare} className="icon" />
+                <p className="link-label">Github</p>
+                <p className="link-content">
+                  : https://github.com/esther-sh-choi
+                </p>
+              </a>
             </div>
           </div>
         </div>

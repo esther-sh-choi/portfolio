@@ -68,7 +68,7 @@ function Projects({ setOpenMenu }) {
                   <div className="leftContainer">
                     <div className="iconContainer">
                       {project.icon.map((element, i) => (
-                        <span className="icon-bg">
+                        <span key={`${element}${i}`} className="icon-bg">
                           <FontAwesomeIcon
                             icon={element}
                             className="icon"
@@ -93,7 +93,7 @@ function Projects({ setOpenMenu }) {
                     <p>{project.description}</p>
                     <ul className="tech-list">
                       {project.technology.map((content, i) => (
-                        <li key={`${project.id}${i}`}>{content}</li>
+                        <li key={`${content.id}${i}`}>{content}</li>
                       ))}
                     </ul>
 
@@ -132,6 +132,7 @@ function Projects({ setOpenMenu }) {
       <div className="counters">
         {projects.map((project, i) => (
           <span
+            key={`${project}${i}`}
             className={`project${i}`}
             style={{
               backgroundColor:

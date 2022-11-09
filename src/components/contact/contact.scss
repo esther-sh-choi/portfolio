@@ -29,65 +29,44 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 100%;
+    position: relative;
 
     @include tablet {
       background-color: rgba(0, 0, 0, 0.557);
-      height: 75%;
     }
     @include iPadAir {
       background-color: rgba(0, 0, 0, 0.557);
-      height: 75%;
     }
 
     h2 {
+      position: absolute;
+      top: 15vh;
       font-size: 30px;
 
-      @include tablet {
-        position: relative;
-        top: calc(100px + 2vh);
-      }
       @include iPadAir {
-        position: relative;
-        top: calc(70px + 2vh);
+        top: calc(100px + 2vh);
         font-size: 40px;
       }
-      @include mobile {
-        position: relative;
-        top: 60px;
-        font-size: 30px;
-      }
-      @include galaxyFold {
-        font-size: 20px;
-      }
-      @include iPhoneSE {
-        top: 40px;
-      }
+
       @include nestHub {
-        top: 20px;
         font-size: 30px;
       }
     }
 
     form {
-      width: 70%;
-      height: 70%;
+      position: absolute;
+      height: 350px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-around;
       caret-color: #ff06fb;
 
-      @include tablet {
-        width: 100%;
-        height: 90%;
-        justify-content: center;
-      }
-
       @include iPadAir {
         width: 100%;
-        height: 90%;
-        justify-content: center;
+        height: 50%;
       }
 
       input {
@@ -190,7 +169,7 @@
       }
 
       button {
-        width: 200px;
+        width: 72%;
         height: 45px;
         color: white;
         background-color: #6052b3;
@@ -219,10 +198,23 @@
     }
 
     .links {
-      margin-top: 30px;
+      position: absolute;
       background-color: #c4bdf3c4;
       padding: 3px 7px;
+      bottom: 60px;
       border-radius: 5px;
+
+      @include iPhoneSE {
+        bottom: 30px;
+      }
+
+      @include galaxyFold {
+        bottom: 40px;
+      }
+
+      @include nestHub {
+        bottom: 40px;
+      }
 
       .link {
         display: flex;
@@ -234,20 +226,27 @@
           font-size: calc(18px + 0.3vw);
           color: black;
         }
-        p {
+
+        a {
+          margin-left: 3px;
+          padding: 2px 5px;
+          text-decoration: none;
+          font-size: inherit;
+          color: inherit;
+          border-radius: 2px;
+          display: flex;
+          align-items: center;
           font-size: calc(12px + 0.3vw);
           color: black;
-          a {
-            margin-left: 3px;
-            padding: 2px 5px;
-            text-decoration: none;
-            font-size: inherit;
-            color: inherit;
-            border-radius: 5px;
 
-            &:hover {
-              background-color: white;
-              color: black;
+          &:hover {
+            background-color: #b7b8ff;
+            cursor: pointer;
+          }
+
+          .link-content {
+            @include mobile {
+              display: none;
             }
           }
         }
@@ -272,32 +271,6 @@
 
     @include iPadAir {
       display: none;
-    }
-  }
-}
-
-@media screen and (orientation: portrait) {
-  .contact {
-    position: relative;
-    .left {
-      .links {
-        margin: 0;
-        position: absolute;
-        bottom: 10px;
-        padding: 0 5px;
-
-        icon {
-          font-size: 13px;
-        }
-        p {
-          font-size: 12px;
-
-          a {
-            margin-left: 0;
-            padding: 2px 3px;
-          }
-        }
-      }
     }
   }
 }

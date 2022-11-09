@@ -69,8 +69,8 @@
             text-align: center;
             margin: 0;
             height: inherit;
-            padding: 0 20px;
-            font-size: calc(12px + 0.5vw);
+            padding: 0 calc(5px + 1vw);
+            font-size: 20px;
             font-weight: 500;
             cursor: pointer;
             display: flex;
@@ -129,7 +129,7 @@
   .navbar {
     height: 50px;
     width: 100vw;
-    transition: none;
+    transition: 1s;
     .wrapper {
       height: 30px;
       padding: 10px 10px;
@@ -155,7 +155,7 @@
       }
       .right {
         .menu-icon {
-          transition: none;
+          transition: 1s;
         }
       }
     }
