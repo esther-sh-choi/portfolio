@@ -4,6 +4,9 @@ import contactImage from "../../images/contact-blue.jpg";
 import Modal from "../UI/Modal";
 import { db } from "../../firebase";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+
 export default function Contact({ setOpenMenu }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -85,6 +88,34 @@ export default function Contact({ setOpenMenu }) {
               Send
             </button>
           </form>
+          <div className="links">
+            <div className="link">
+              <a
+                href="http://www.linkedin.com/in/esther--choi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} className="icon" />
+                <p className="link-label">Linkedin</p>
+                <p className="link-content">
+                  : http://www.linkedin.com/in/esther--choi
+                </p>
+              </a>
+            </div>
+            <div className="link">
+              <a
+                href="https://github.com/esther-sh-choi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FontAwesomeIcon icon={faGithubSquare} className="icon" />
+                <p className="link-label">Github</p>
+                <p className="link-content">
+                  : https://github.com/esther-sh-choi
+                </p>
+              </a>
+            </div>
+          </div>
         </div>
         <div className="right">
           <img src={contactImage} alt="" />

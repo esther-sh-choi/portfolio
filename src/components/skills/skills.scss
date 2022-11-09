@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: black;
   color: white;
   padding-top: calc(20px + 1vh);
@@ -16,12 +17,14 @@
     @include galaxyFold {
       margin-top: 30px;
     }
+    @include nestHub {
+      font-size: 30px;
+      margin-top: 50px;
+    }
   }
 
   ul {
     margin: 10px;
-    padding-top: calc(60px + 1vh);
-    padding-left: 0;
     list-style: none;
     display: flex;
     justify-content: space-around;
@@ -45,12 +48,16 @@
         color: white;
         transition: all 0.3s ease;
       }
+
+      @include nestHub {
+        padding: 10px;
+      }
     }
   }
 
   .container {
+    flex: 1;
     width: 90%;
-    height: 50%;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -71,6 +78,10 @@
         margin-top: 0;
         padding: 0 20px;
       }
+      @include nestHub {
+        height: 100px;
+        width: 30px;
+      }
 
       .icon {
         font-size: calc(40px + 0.5vw);
@@ -79,34 +90,50 @@
           font-size: calc(50px + 0.5vw);
           transition: all 0.5s ease;
         }
+
+        @include nestHub {
+          font-size: 30px;
+          padding-bottom: 10px;
+        }
       }
 
       h3 {
         font-size: calc(12px + 0.5vw);
+        text-align: center;
+
+        @include nestHub {
+          font-size: 15px;
+        }
       }
+
       h5 {
         font-size: calc(7px + 0.5vw);
         text-align: center;
+
+        @include nestHub {
+          font-size: 10px;
+        }
       }
     }
   }
   .bg {
-    flex-grow: 1;
+    height: 150px;
     width: 100%;
     background-repeat: no-repeat;
-    background-position-y: -30px;
     background-size: cover;
     overflow: hidden;
+    z-index: 3;
   }
 
   .wave {
+    // overflow: hidden;
     background-image: url("../../images/wave-bg.svg");
   }
 }
 
 @media screen and (max-width: 765px) {
   .skills {
-    padding-top: 70px;
+    padding-top: 40px;
     h1 {
       font-size: 35px;
     }
@@ -124,7 +151,7 @@
       }
     }
     .container {
-      padding-top: 50px;
+      padding-top: 30px;
       .item {
         .icon {
           width: 45px;
@@ -136,7 +163,7 @@
       }
     }
     .bg {
-      background-position-y: -20px;
+      background-position-y: -30px;
       .wave {
         background-image: url("../../images/wave-bg-tablet.svg");
       }
@@ -153,7 +180,7 @@
   }
 }
 
-@media screen and (max-width: 455px) {
+@media screen and (max-width: 460px) {
   .skills {
     ul {
       padding-top: 15px;
@@ -177,25 +204,33 @@
   }
 }
 
-@media screen and (max-width: 275px) {
+@media screen and (max-width: 300px) {
   .skills {
     padding-top: 15px;
     h1 {
       font-size: 30px;
+      @include galaxyFold {
+        padding-top: 10px;
+      }
     }
     ul {
       padding-top: 30px;
+
+      @include galaxyFold {
+        padding-top: 10px;
+      }
     }
     .container {
-      flex-grow: 1;
-      padding-top: 10px;
+      padding-top: 20px;
       .item {
-        padding-top: 7px;
+        padding-top: 25px;
         height: 100px;
       }
     }
     .bg {
-      display: none;
+      @include galaxyFold {
+        background-position-y: 0;
+      }
     }
   }
 }
