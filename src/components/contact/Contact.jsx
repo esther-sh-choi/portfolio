@@ -26,6 +26,7 @@ export default function Contact({ setOpenMenu }) {
         message: "Please fill out the form completely.",
       });
     } else if (
+      //eslint-disable-next-line
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false
     ) {
       setMessageModal({
