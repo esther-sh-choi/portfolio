@@ -1,7 +1,6 @@
 import React, { useState, Fragment } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
 import contactImage from "../../images/contact-blue.jpg";
 import Modal from "../UI/Modal";
@@ -108,7 +107,7 @@ export default function Contact({ setOpenMenu }) {
           </div>
         </div>
         <div className="image">
-          <img src={contactImage} alt="contact-image" />
+          <img src={contactImage} alt="envelopes-blue-background" />
         </div>
       </div>
       {messageModal && (
