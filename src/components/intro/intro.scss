@@ -1,95 +1,105 @@
 @import "../../global.scss";
 
 .intro {
-  background-image: url("../../images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: rgb(219, 222, 255);
+  background: linear-gradient(
+    158deg,
+    rgb(165, 137, 236) 0%,
+    rgb(182, 188, 255) 40%,
+    rgb(180, 186, 255) 70%,
+    #6388ff 100%
+  );
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  background-color: black;
+  padding: 45px 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
-  .top {
-    flex: 0.8;
-    margin-top: 90px;
+  @include mobile {
+    padding: 45px 0px;
+  }
 
-    font-weight: 200;
+  .intro-name {
     display: flex;
-    flex-direction: column;
-    align-self: center;
+    justify-content: center;
+    color: white;
 
-    width: 50%;
-
-    .intro-name {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      color: white;
-
-      h1 {
-        align-self: baseline;
-        font-family: "JetBrains Mono", monospace;
-        font-size: 35px;
-        font-weight: 100;
-        padding-right: 10px;
-      }
-
-      h1.name {
-        padding-left: 10px;
-        align-self: baseline;
-        font-size: 55px;
-        // color: #9fafff;
-      }
+    .hi {
+      align-self: baseline;
+      font-size: 35px;
+      font-weight: bold;
+      padding-right: 10px;
     }
 
-    .intro-sentence {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      h3 {
-        font-family: "JetBrains Mono", monospace;
-        font-size: 25px;
-        color: white;
+    h1.name {
+      align-self: baseline;
+      font-size: 55px;
+    }
+  }
 
-        .role {
-          color: #f44c13;
-        }
+  .intro-sentence {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+
+    .typing-cursor {
+      font-size: inherit;
+    }
+
+    .role {
+      color: rgb(165, 137, 236);
+      font-family: "JetBrains Mono", monospace;
+    }
+  }
+
+  .intro-image-container {
+    max-height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .intro-image {
+      object-position: center center;
+      height: 130%;
+
+      @include iPadAir {
+        width: 100%;
+        height: 100%;
       }
 
-      h4 {
-        font-size: 10px;
-        color: white;
+      @include nestHub {
+        height: 130%;
       }
     }
   }
-  .bottom {
-    flex: 0.2;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+
+  .resume-btn {
+    border-radius: 10px;
+    padding: 10px 60px;
+    font-size: 15px;
+    margin-top: 20px;
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 600px) {
   .intro {
-    .top {
-      width: 80%;
-      margin-top: 130px;
-      .intro-name {
-        h1 {
-          font-size: 25px;
-        }
-        h1.name {
-          font-size: 40px;
-        }
-      }
+    width: 80%;
+    margin-top: 130px;
 
-      .intro-sentence {
-        h3 {
-          font-size: 20px;
-        }
+    .intro-sentence {
+      .role {
+        font-size: 20px;
       }
     }
   }
@@ -97,21 +107,22 @@
 
 @media screen and (max-width: 440px) {
   .intro {
-    background-position: 30%;
-    .top {
-      .intro-name {
-        h1 {
-          font-size: 20px;
-        }
-        h1.name {
-          font-size: 30px;
-        }
+    .intro-name {
+      .hi {
+        font-size: 30px;
       }
+      h1.name {
+        padding-left: 2px;
+        font-size: 40px;
+      }
+    }
 
-      .intro-sentence {
-        h3 {
-          font-size: 17px;
-        }
+    .intro-sentence {
+      width: 250px;
+      bottom: 50%;
+
+      .role {
+        font-size: 13px;
       }
     }
   }
@@ -119,20 +130,21 @@
 
 @media screen and (max-width: 355px) {
   .intro {
-    .top {
-      .intro-name {
-        h1 {
-          font-size: 15px;
-        }
-        h1.name {
-          font-size: 25px;
-          padding: 0;
-        }
+    .intro-name {
+      .hi {
+        font-size: 20px;
       }
+      h1.name {
+        font-size: 35px;
+        padding: 0;
+      }
+    }
 
-      .intro-sentence {
-        h3 {
-          font-size: 15px;
+    .intro-sentence {
+      .role {
+        font-size: 12px;
+        @include galaxyFold {
+          font-size: 10px;
         }
       }
     }

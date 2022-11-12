@@ -3,7 +3,10 @@ import { faMobileScreen, faDisplay } from "@fortawesome/free-solid-svg-icons";
 
 export const projects = [
   {
-    icon: [faDisplay, faMobileScreen],
+    icon: [
+      { label: faDisplay, alt: "Desktop Compatible" },
+      { label: faMobileScreen, alt: "Mobile Compatible" },
+    ],
     id: 1234,
     title: "Ladder Game for Indecisive People",
     skills: ["Figma", "React.js", "CSS Module"],
@@ -24,7 +27,10 @@ export const projects = [
     },
   },
   {
-    icon: [faDisplay, faMobileScreen],
+    icon: [
+      { label: faDisplay, alt: "Desktop Compatible" },
+      { label: faMobileScreen, alt: "Mobile Compatible" },
+    ],
     id: 1357,
     title: "Project Portfolio Website",
     skills: ["React.js", "SCSS"],
@@ -41,7 +47,10 @@ export const projects = [
     },
   },
   {
-    icon: [faDisplay, faMobileScreen],
+    icon: [
+      { label: faDisplay, alt: "Desktop Compatible" },
+      { label: faMobileScreen, alt: "Mobile Compatible" },
+    ],
     id: 5678,
     title: "Foodify - Playlist of Restaurants",
     skills: ["Figma", "React.js", "CSS Module", "Node.js"],

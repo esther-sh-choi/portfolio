@@ -2,15 +2,12 @@
 
 .skillsList {
   font-size: calc(18px + 0.5vw);
-  margin: 0 50px;
-  padding: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
 
   &.active {
     background-color: #7981da;
     color: $mainColor;
-    font-weight: 500;
   }
   &:hover {
     background-color: rgba(255, 255, 255, 0.85);

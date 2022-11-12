@@ -1,56 +1,46 @@
 @import "../../global.scss";
 
 .skills {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: black;
   color: white;
-  padding-top: calc(20px + 1vh);
-  padding-left: 0;
+  padding-top: 70px;
 
   h1 {
-    font-size: calc(35px + 1vw);
-    margin-top: 70px;
-
-    @include galaxyFold {
-      margin-top: 30px;
-    }
-    @include nestHub {
-      font-size: 30px;
-      margin-top: 50px;
-    }
+    font-size: 50px;
+    margin-top: 40px;
   }
 
-  ul {
-    margin: 10px;
+  .skills-tab {
+    margin-top: 20px;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0;
 
     li {
-      border: 3px solid transparent;
-      font-size: calc(15px + 0.5vw);
-      margin: 0 50px;
-      padding: calc(15px + 0.5vh);
+      width: 100px;
+      border: 2px solid transparent;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px 40px;
       transition: all 0.3s ease;
       cursor: pointer;
 
       &.active {
         background-color: #7981da;
+        border: 2px solid #7981da;
         color: $mainColor;
-        font-weight: 500;
       }
       &:hover {
-        border: 3px solid white;
+        border: 2px solid white;
         background: none;
         color: white;
         transition: all 0.3s ease;
-      }
-
-      @include nestHub {
-        padding: 10px;
       }
     }
   }
@@ -62,110 +52,73 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    padding-top: calc(10px + 1vh);
+    padding: 10vh 0 5vh 0;
 
     .item {
+      width: 80px;
+      height: 105px;
+      padding: 0 5vw;
       display: flex;
-      width: calc(35px + 1vw);
-      height: calc(140px + 1vh);
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: calc(10px + 1vh) calc(30px + 1vw) 0 calc(30px + 1vw);
-
-      @include galaxyFold {
-        margin-top: 0;
-        padding: 0 20px;
-      }
-      @include nestHub {
-        height: 100px;
-        width: 30px;
-      }
 
       .icon {
-        font-size: calc(40px + 0.5vw);
-        padding-bottom: 20px;
+        font-size: 40px;
+        padding-bottom: 10px;
         &:hover {
-          font-size: calc(50px + 0.5vw);
+          font-size: 45px;
           transition: all 0.5s ease;
-        }
-
-        @include nestHub {
-          font-size: 30px;
-          padding-bottom: 10px;
         }
       }
 
       h3 {
-        font-size: calc(12px + 0.5vw);
+        font-size: 17px;
         text-align: center;
-
-        @include nestHub {
-          font-size: 15px;
-        }
       }
 
       h5 {
-        font-size: calc(7px + 0.5vw);
+        font-size: 10px;
         text-align: center;
-
-        @include nestHub {
-          font-size: 10px;
-        }
+        font-weight: 400;
       }
     }
   }
-  .bg {
-    height: 150px;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    z-index: 3;
-  }
 
   .wave {
-    // overflow: hidden;
-    background-image: url("../../images/wave-bg.svg");
+    height: 25vh;
+    width: 100%;
+    position: relative;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: -30px;
+    }
   }
 }
 
 @media screen and (max-width: 765px) {
   .skills {
-    padding-top: 40px;
     h1 {
-      font-size: 35px;
+      font-size: 40px;
     }
-    ul {
-      padding-top: 70px;
-      justify-content: space-around;
-      width: 90%;
-      margin: 0 10px;
+    .skills-tab {
       li {
-        margin: 0;
         font-size: 18px;
-        padding: 10px 15px;
-        flex-grow: 1;
-        text-align: center;
+        width: 80px;
       }
     }
     .container {
-      padding-top: 30px;
       .item {
         .icon {
           width: 45px;
-
           h3 {
             font-size: 15px;
           }
         }
-      }
-    }
-    .bg {
-      background-position-y: -30px;
-      .wave {
-        background-image: url("../../images/wave-bg-tablet.svg");
       }
     }
   }
@@ -173,21 +126,38 @@
 
 @media screen and (max-width: 550px) {
   .skills {
-    padding-top: calc(20px + 2vh);
-    ul {
-      padding-top: calc(20px + 2vh);
+    padding-top: 50px;
+    .skills-tab {
+      li {
+        font-size: 15px;
+        padding: 10px 30px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 480px) {
   .skills {
-    ul {
-      padding-top: 15px;
+    .skills-tab {
+      width: 100%;
+      li {
+        flex: 1;
+        font-size: 15px;
+        padding: 10px 30px;
+        &:active {
+          border: 1px solid #7981da;
+        }
+        &:hover {
+          border: 1px solid white;
+        }
+      }
     }
     .container {
+      padding: 30px 0;
       .item {
-        height: 110px;
+        height: 80px;
+        width: 80px;
+        padding: 0 10px;
         .icon {
           padding-bottom: 5px;
         }
@@ -196,40 +166,37 @@
         }
       }
     }
-    .bg {
-      .wave {
-        background-image: url("../../images/wave-bg-phone.svg");
-      }
-    }
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 385px) {
   .skills {
-    padding-top: 15px;
+    padding-top: 40px;
     h1 {
       font-size: 30px;
-      @include galaxyFold {
-        padding-top: 10px;
-      }
     }
-    ul {
-      padding-top: 30px;
-
-      @include galaxyFold {
-        padding-top: 10px;
+    .skills-tab {
+      li {
+        font-size: 12px;
+        padding: 10px 0;
       }
     }
     .container {
-      padding-top: 20px;
+      padding-bottom: 0;
       .item {
-        padding-top: 25px;
-        height: 100px;
-      }
-    }
-    .bg {
-      @include galaxyFold {
-        background-position-y: 0;
+        .icon {
+          font-size: 30px;
+        }
+        h3 {
+          font-size: 14px;
+
+          @include galaxyFold {
+            font-size: 12px;
+          }
+        }
+        h5 {
+          font-size: 8px;
+        }
       }
     }
   }

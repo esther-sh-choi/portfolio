@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./skills.scss";
-import SkillsList from "../skillsList/SkillsList";
-import { frontList, backList } from "../../skillsData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import SkillsList from "../skillsList/SkillsList";
+import { frontList, backList, otherList } from "../../skillsData";
+import image from "../../images/wave-bg.svg";
+
+import "./skills.scss";
 
 export default function Skills({ setOpenMenu }) {
   const [selected, setSelected] = useState("front");
@@ -20,6 +23,7 @@ export default function Skills({ setOpenMenu }) {
       title: "Back-End",
       key: 1,
     },
+    { id: "other", title: "Other", key: "2" },
   ];
 
   useEffect(() => {
@@ -30,6 +34,9 @@ export default function Skills({ setOpenMenu }) {
       case "back":
         setSkillData(backList);
         break;
+      case "other":
+        setSkillData(otherList);
+        break;
       default:
         setSkillData(frontList);
     }
@@ -37,8 +44,8 @@ export default function Skills({ setOpenMenu }) {
 
   return (
     <div className="skills" id="skills" onClick={() => setOpenMenu(false)}>
-      <h1>Skills</h1>
-      <ul>
+      <h1>/skills</h1>
+      <ul className="skills-tab">
         {skillTypeList.map((item) => (
           <SkillsList
             title={item.title}
@@ -61,8 +68,8 @@ export default function Skills({ setOpenMenu }) {
           </div>
         ))}
       </div>
-      <div className="bg wave">
-        {/* <image src="../../images/wave-bg.svg" /> */}
+      <div className="wave">
+        <img src={image} alt={"purple wave background"} />
       </div>
     </div>
   );

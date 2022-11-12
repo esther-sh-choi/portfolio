@@ -1,23 +1,24 @@
 import React, { useState, Fragment } from "react";
-import "./contact.scss";
-import contactImage from "../../images/contact-blue.jpg";
-import Modal from "../UI/Modal";
-import { db } from "../../firebase";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
 
+import contactImage from "../../images/contact-blue.jpg";
+import Modal from "../UI/Modal";
+import { db } from "../../firebase";
+import { contactMethods } from "../../contactMethods";
+
+import "./contact.scss";
+
 export default function Contact({ setOpenMenu }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
   const [loader, setLoader] = useState(false);
 
   const [messageModal, setMessageModal] = useState();
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     setLoader(true);
 
     if (email.length < 5 || message.length < 10) {
@@ -67,8 +68,8 @@ export default function Contact({ setOpenMenu }) {
   return (
     <Fragment>
       <div className="contact" id="contact" onClick={() => setOpenMenu(false)}>
-        <div className="left">
-          <h2>Contact.</h2>
+        <div className="form-container">
+          <h2>#contact</h2>
           <form onSubmit={submitHandler}>
             <input
               type="text"
@@ -86,40 +87,28 @@ export default function Contact({ setOpenMenu }) {
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
             <button type="submit" style={{ background: loader ?? "#ccc" }}>
-              Send
+              SEND
             </button>
           </form>
-          <div className="links">
-            <div className="link">
-              <a
-                href="http://www.linkedin.com/in/esther--choi"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faLinkedin} className="icon" />
-                <p className="link-label">Linkedin</p>
-                <p className="link-content">
-                  : http://www.linkedin.com/in/esther--choi
-                </p>
-              </a>
-            </div>
-            <div className="link">
-              <a
-                href="https://github.com/esther-sh-choi"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <FontAwesomeIcon icon={faGithubSquare} className="icon" />
-                <p className="link-label">Github</p>
-                <p className="link-content">
-                  : https://github.com/esther-sh-choi
-                </p>
-              </a>
-            </div>
+          <div className="link-container">
+            {contactMethods
+              .filter((contactMethod) => contactMethod.type === "link")
+              .map((contactLink) => (
+                <div
+                  key={contactLink.label}
+                  className={`link ${contactLink.label.toLowerCase()}`}
+                >
+                  <a href={contactLink.href} target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={contactLink.icon} className="icon" />
+                    <p className="link-label">{contactLink.label}</p>
+                    <p className="link-content">: {contactLink.href}</p>
+                  </a>
+                </div>
+              ))}
           </div>
         </div>
-        <div className="right">
-          <img src={contactImage} alt="" />
+        <div className="image">
+          <img src={contactImage} alt="contact-image" />
         </div>
       </div>
       {messageModal && (
