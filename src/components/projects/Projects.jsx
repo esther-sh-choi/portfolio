@@ -6,6 +6,7 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
+import Modal from "../UI/Modal";
 import { projects } from "../../projectsData";
 
 import "./projects.scss";
@@ -14,6 +15,7 @@ function Projects({ setOpenMenu }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [openDetailModal, setOpenDetailModal] = useState(false);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
   const minSwipeDistance = 4;
@@ -41,6 +43,10 @@ function Projects({ setOpenMenu }) {
       : setCurrentSlide(
           currentSlide === projects.length - 1 ? currentSlide : currentSlide + 1
         );
+  };
+
+  const handleClickDetail = () => {
+    setOpenDetailModal(true);
   };
 
   return (
@@ -91,16 +97,14 @@ function Projects({ setOpenMenu }) {
                   </div>
                   <p>
                     {project.description}
-                    <button className="more-detail-btn">
+                    <button
+                      className="more-detail-btn"
+                      id={project.id}
+                      onClick={handleClickDetail}
+                    >
                       Click here for more detail
                     </button>
                   </p>
-                  {/* <ul className="tech-list">
-                    {project.technology.map((content, i) => (
-                      <li key={`${content.id}${i}`}>{content}</li>
-                    ))}
-                  </ul> */}
-
                   <div className="btnContainer">
                     <a
                       href={project.links.website}
@@ -144,6 +148,9 @@ function Projects({ setOpenMenu }) {
           />
         ))}
       </div>
+      {openDetailModal && (
+        <Modal onConfirm={() => setOpenDetailModal(false)}></Modal>
+      )}
     </div>
   );
 }
