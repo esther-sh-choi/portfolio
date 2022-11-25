@@ -18,7 +18,7 @@ function Projects({ setOpenMenu }) {
   const [openDetailModal, setOpenDetailModal] = useState(false);
 
   // the required distance between touchStart and touchEnd to be detected as a swipe
-  const minSwipeDistance = 4;
+  const minSwipeDistance = 2;
 
   const onTouchStart = (e) => {
     setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
@@ -134,6 +134,9 @@ function Projects({ setOpenMenu }) {
           className="arrow right"
           alt="right arrow"
           onClick={() => slideHandler()}
+          styles={{
+            display: currentSlide === projects.length - 1 ? "none" : "inline",
+          }}
         />
       </div>
       <div className="counters">

@@ -11,7 +11,7 @@ export const projects = [
     title: "Ladder Game for Indecisive People",
     skills: ["Figma", "React.js", "CSS Module"],
     description:
-      "Assigning roles for the next project or deciding who will do the dishes can be a daunting task for indecisive people. Each person can simply choose an animal character after inputing possible outcomes. Then, let the ladder algorithm determine the roles or even tell you who the winner will be!",
+      "Assigning roles or deciding what to eat can be a daunting task for indecisive people. Simply input the roles and choose an animal. Can't choose? Let the ladder pick for you.",
     technology: [
       "Technology: Howler, Context API, React hooks (useState, useEffect, useHistory, useRef, useContext), localStorage, Canvas API",
       "Built ladder algorithm from scratch",

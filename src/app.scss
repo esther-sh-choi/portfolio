@@ -1,11 +1,13 @@
 .app {
   height: 100vh;
+
   display: flex;
   flex-direction: column;
 
   .sections {
     flex: 1;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     scrollbar-width: none; // firebox
